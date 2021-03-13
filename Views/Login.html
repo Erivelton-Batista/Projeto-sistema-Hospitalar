@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device=width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../css/Login_styles.css">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<title>Tela de Login</title>
+	<!--bota icone no Title-->
+	<link rel="icon" type="image/jpg" href="../img/icone_hospital.png">
+	<!--pra usar os icones-->
+	<script src="https://kit.fontawesome.com/fd2fcc4b4d.js" crossorigin="anonymous"></script>
+		
+</head>
+
+<body id="body">
+
+	<div id="login_div">
+	<!--Forms do Login-->
+	<form id="form-login" method="POST" action="../Model/Pass_Login.php">
+		
+			<!--icone do Login-->
+			<div align="center" id="icon-forms">
+				<i class="fas fa-hospital fa-5x"></i>
+			</div>
+		
+			<div id="label-login">
+				<label class="form-label">Login</label>
+			</div>
+
+			<!--Campos de Login-->
+			<div class="mb-3">
+    			<input type="email" class="form-control" id="login" name="login" placeholder="Login" required name="email">	
+  			</div>
+
+  			<!--Campos de senha-->
+  			<div class="mb-3">
+  				<input type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
+  			</div>
+
+  			<!--Check box de mostrar senha-->
+  			<div class="form-check">
+  				<input class="form-check-input" type="checkbox" onclick="mostrar_senha()">
+  				<label class="form-check-label" for="flexCheckDefault">Mostrar Senha</label>
+  			</div>
+
+  			<!--botão Entrar-->
+  			<div align="center" id="button-input">
+  				<button class="btn btn-secondary btn-lg" type="submit">Entrar</button>
+  			</div>
+
+  			<div id="login-cad" align="center">©2021 Sistema Hospitalar</div>
+
+	</form>
+	</div>
+		
+	<!--Js de mascara de senha-->
+		<script>
+			function mostrar_senha(){
+				var tipo = document.getElementById("senha");
+
+				if (tipo.type == "password") {
+					tipo.type = "text";
+				}else{
+					tipo.type = "password";
+				}
+			}
+		</script>
+
+</body>
+
+	
+</html>

@@ -1,0 +1,41 @@
+/*body principal*/
+#body{
+		background-image: url("../img/layout.jpg");
+		height: 100%;
+		
+}
+
+
+/*design do form*/
+#form-login{
+	
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 20px;
+	margin: 0 auto;
+	position: center;
+	margin-top: 10%;
+	margin-left: 38%;
+	width: 450px;
+	height: 520px;
+	padding: 3%;
+	box-shadow: 7px 7px 5px grey;
+}
+
+/*estilo da label Login*/
+#label-login{
+	font-size: 40px;
+	text-align: center;
+	font-family: impact;
+	margin-top: 2%;
+	margin-bottom: 10%;
+}
+
+/*botao Enviar*/
+#button-input{
+	margin-top: 10%;
+}
+
+/*label de cadastra-se*/
+#login-cad{
+	margin-top: 4%;
+}
