@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device=width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../css/Cadastro_styles.css">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<title>Tela de Cadastro</title>
+	<!--bota icone no Title-->
+	<link rel="icon" type="image/jpg" href="../img/icone_hospital.png">
+	<!--pra usar os icones-->
+	<script src="https://kit.fontawesome.com/fd2fcc4b4d.js" crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+
+</head>
+
+<body>
+
+  <div id="Formp">
+	
+		
+	<form class="form-horizontal" action="../Model/Pass_Cadastro.php" method="POST">
+
+	  <fieldset>
+
+	  <!--Text input nome-->
+		<div class="form-group row">
+
+  			<label class="col-md-0 mt-5 ml-5 control-label" for="Nome">Nome <h11>*</h11></label>  
+  		  <div class="col-md-8 mt-5 ml-3">
+  			<input id="Nome" name="Nome" placeholder="Digite seu Nome Completo" class="form-control input-md" required="" type="text">
+  		  </div>
+
+		</div>
+	  
+	  <!--Text input CPF, RG, Data de Nascimento-->
+		<div class="form-group row" id="CPFRGDT">
+
+  			<label class="col-md-0 ml-5 control-label" for="CPF">CPF <h11>*</h11></label>  
+  		  <div class="col-md-2 ml-3">
+  			<input id="CPF" name="CPF" placeholder="Ex: 000.000.000-00" class="form-control input-md" required="" type="text" >
+  		  </div>
+
+  		  	<label class="col-md-0 ml-5 control-label" for="RG">RG <h11>*</h11></label>  
+  		  <div class="col-md-2 ml-3">
+  			<input id="RG" name="RG" placeholder="" class="form-control input-md" required="" type="text">
+  		  </div>
+
+  		  	<label class="col-md-0 ml-5 control-label" for="Nascimento">Data de Nascimento <h11>*</h11></label> 
+  		  <div class="col-md-2 ml-3">
+  			<input id="Nascimento" name="Nascimento" placeholder="DD/MM/AAAA" class="form-control input-md" required="" type="text" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
+  		  </div>
+
+		</div>
+
+	  <!--Text input Telefone e Celular-->
+	  	<div class="form-group row">
+
+	  		<label class="col-md-0 ml-5 control-label" for="Telefone">Telefone <h11>*</h11></label>  
+  		  <div class="col-md-2 ml-0">
+  			<input id="Telefone" name="Telefone" placeholder="Ex: (81) 99999-9999" class="form-control input-md" required="" type="text">
+  		  </div>
+
+  		    <label class="col-md-0 ml-3 control-label" for="Celular">Celular <h11>*</h11></label>  
+  		  <div class="col-md-2 ml-3">
+  			<input id="Celular" name="Celular" placeholder="Ex: (81) 99999-9999" class="form-control input-md" required="" type="text">
+  		  </div>
+
+	  	</div>
+
+	  <!--Text input Email-->
+	  	<div class="form-group row">
+
+  			<label class="col-md-0 ml-5 control-label" for="Email">Email <h11>*</h11></label>  
+  		  <div class="col-md-8 ml-3">
+  			<input id="Email" name="Email" placeholder="Ex: email@gmail.com" class="form-control input-md" required="" type="email">
+  		  </div>
+
+		</div>
+
+	  <!--Text input Tipo sanguineo, SUS, sexo-->
+	  	<div class="form-group row">
+
+  			<label for="Sangue">Tipo Sanguineo <h11>*</h11></label>
+ 			<select class="form-control col-md-1 ml-2" id="Sangue" name="Sangue">
+  				<option>A+</option>
+    			<option>A-</option>
+   				<option>B+</option>
+    			<option>B-</option>
+    			<option>AB+</option>
+    			<option>AB-</option>
+    			<option>O+</option>
+    			<option>O-</option>
+  			</select>
+
+  		   <label class="col-md-0 ml-5 control-label" for="SUS">Cartão do SUS <h11>*</h11></label>  
+  		  <div class="col-md-2 ml-3">
+  			<input id="SUS" name="SUS" placeholder="Ex: 000 0000 0000 0000" class="form-control input-md" required="" type="text">
+  		  </div>
+
+		  <div>
+		  	<label class="col-md-0 ml-5 control-label" for="Sexo">Sexo <h11>*</h11></label>
+			<label class="radio-inline ml-3"><input type="radio" name="Sexo">  Masculino</label>
+			<label class="radio-inline ml-3"><input type="radio" name="Sexo">  Feminino</label>
+		  </div>
+
+		</div>
+	  <!--Text input Endereço-->
+		<div class="form-group row">
+
+			<label class="col-md-0 ml-4 control-label" for="Endereço">Endereço <h11>*</h11></label>  
+  		  <div class="col-md-5 ml-3">
+  			<input id="Endereço" name="Endereço" placeholder="Rua" class="form-control input-md" required="" type="text">
+  		  </div>
+
+  		  <label class="col-md-0 ml-5 control-label" for="Numero">N° <h11>*</h11></label>  
+  		  <div class="col-md-2 ml-3">
+  			<input id="Numero" name="Numero" placeholder="" class="form-control input-md" required="" type="text">
+  		  </div>
+			
+		</div>
+
+	  <!--Text input Endereço complemento-->
+		<div class="form-group row">
+
+			<label class="col-md-0 ml-0 control-label" for="Complemento">Complemento <h11>*</h11></label>  
+  		  <div class="col-md-4 ml-1">
+  			<input id="Complemento" name="Complemento" placeholder="" class="form-control input-md" required="" type="text">
+  		  </div>
+
+  		  <label class="col-md-0 ml-3 control-label" for="Bairro">Bairro <h11>*</h11></label>  
+  		  <div class="col-md-3 ml-4">
+  			<input id="Bairro" name="Bairro" placeholder="" class="form-control input-md" required="" type="text">
+  		  </div>
+			
+		</div>
+
+	  <!--Text input Endereço Cidade-->
+		<div class="form-group row">
+
+			<label class="col-md-0 ml-5 control-label" for="Cidade">Cidade <h11>*</h11></label>  
+  		  <div class="col-md-3 ml-2">
+  			<input id="Cidade" name="Cidade" placeholder="" class="form-control input-md" required="" type="text">
+  		  </div>
+
+  		    <label class="col-md-0 ml-3  control-label" for="Estado">Estado <h11>*</h11></label>  
+  		  <div class="col-md-1 ml-4 ">
+  			<input id="Estado" name="Estado" placeholder="" class="form-control input-md" required="" type="text">
+  		  </div>
+			
+		</div>
+
+		<!-- Button (Double) -->
+		<div class="form-group row">
+
+  		  <div class="col-md-8 ml-8" id="botao">
+            <button id="Cadastrar" name="Cadastrar" class="btn btn-success" type="Submit">Cadastrar</button>
+            <button id="Cancelar" name="Cancelar" class="btn btn-danger" type="Reset">Cancelar</button>
+          </div>
+
+        </div>
+	  
+	  
+	  
+	  </fieldset>
+
+ 	</form>
+
+
+</div>
+		<!--Js de mascara-->
+		<script>
+			$(document).ready(function(){
+    			$("#CPF").mask('000.000.000-00');
+
+    			$('#Nascimento').mask('00/00/0000');
+
+    			$('#SUS').mask('000 0000 0000 0000');
+
+    			$('#Telefone').mask('(00)00000-0000');
+
+    			$('#Celular').mask('(00)00000-0000');
+
+    			$('#Estado').mask('AA');
+			});
+
+				$('#Estado').on('keyup', (ev) => {
+					$('#Estado').val($('#Estado').val().toUpperCase());
+				});
+
+		</script>
+
+
+</body>
+
+	
+</html>
